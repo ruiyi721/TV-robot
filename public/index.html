@@ -9,8 +9,14 @@
 </head>
 
 <body>
-  <div id="space">
+  <div>
     <button onclick="space()">開始/暫停</button>
+  </div>
+  <div>
+    <button onclick="right()">快轉</button>
+  </div>
+  <div>
+    <button onclick="left()">倒轉</button>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -21,6 +27,12 @@
     // })
     function space() {
       axios.post('/api/space').catch((err) => alert(err))
+    }
+    function right() {
+      axios.post('/api/right').catch((err) => alert(err))
+    }
+    function left() {
+      axios.post('/api/left').catch((err) => alert(err))
     }
   </script>
 </body>
