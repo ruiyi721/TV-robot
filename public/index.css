@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --gap: 16px;
+  --transition: all 0.2s ease-in-out;
+  --bgGradient: linear-gradient(
+    318.32deg,
+    #c3d1e4 0%,
+    #dde7f3 55%,
+    #d4e0ed 100%
+  );
+  --btnSize: 62px;
+  --btnBorderRadius: 18px;
+  --borderGap: 2px;
+  --btnOuterShadow: 4px 2px 16px rgba(136, 165, 191, 0.48),
+    -4px -2px 16px #ffffff;
+  --btnCheckedInsetShadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48),
+    inset -3px -3px 7px #ffffff;
+  --btnContentBorderRadius: calc(var(--btnBorderRadius) - var(--borderGap));
+  --iconColor: rgba(201, 215, 230, 0.8);
+  --iconSize: calc((var(--btnSize) / 2));
+  --iconShadow: 2px 2px 2px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+    2px 2px 2px rgba(214, 225, 239, 0);
+  --btnCheckedIconShadow: 1px 1px 1px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+    1px 1px 1px rgba(214, 225, 239, 0);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bgGradient);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.btns-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background: none;
+  width: var(--btnSize);
+  height: var(--btnSize);
+  position: relative;
+  border-radius: var(--btnBorderRadius);
+  padding: var(--borderGap);
+  -webkit-box-shadow: var(--btnOuterShadow);
+          box-shadow: var(--btnOuterShadow);
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  margin: 10px;
+}
+
+.content-wrapper {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--btnContentBorderRadius);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.content-wrapper i {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  font-size: var(--iconSize);
+  position: relative;
+  pointer-events: none;
+  color: var(--iconColor);
+  text-shadow: var(--iconShadow);
+}
+
+button:focus, button:active, button:hover {
+  -webkit-box-shadow: var(--btnCheckedInsetShadow);
+          box-shadow: var(--btnCheckedInsetShadow);
+}
+
+button:focus i, button:active i, button:hover i {
+  text-shadow: var(--btnCheckedIconShadow);
+}
+/*# sourceMappingURL=index.css.map */

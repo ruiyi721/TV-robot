@@ -5,26 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="index.css">
   <title>電腦遙控器</title>
 </head>
 
 <body>
-  <div>
-    <button onclick="space()">開始/暫停</button>
+  <div class="btns-wrapper">
+    <button class="btn" onclick="space()">
+      <span class="content-wrapper">
+        <i class="material-icons-round">play_arrow</i>
+      </span>
+    </button>
+    <button class="btn" onclick="space()">
+      <span class="content-wrapper">
+        <i class="material-icons-round">pause</i>
+      </span>
+    </button>
+    <button class="btn" onclick="right()">
+      <span class="content-wrapper">
+        <i class="material-icons-round">skip_next</i>
+      </span>
+    </button>
   </div>
-  <div>
-    <button onclick="right()">快轉</button>
-  </div>
-  <div>
-    <button onclick="left()">倒轉</button>
-  </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script>
-    // $('#space').click(function() {
-    //   // console.log('123');
-    //   axios.post('/api/space').catch((err) => alert(err))
-    // })
     function space() {
       axios.post('/api/space').catch((err) => alert(err))
     }
